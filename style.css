@@ -1,0 +1,134 @@
+:root{
+  --card-w: 360px;
+  --muted: #8e8e8e;
+  --border: #dbdbdb;
+  --primary: #6c78f6; /* близкий к фиолетовато-лавандовому в скрине */
+  --fb: #385185;
+  --bg: #fafafa;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background:var(--bg);
+  color:#111;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+}
+
+/* центр страницы */
+.center-wrap{
+  width:100%;
+  max-width:980px;
+  margin:48px auto;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:14px;
+  padding:0 20px;
+}
+
+/* карточки */
+.card{
+  background:#fff;
+  border:1px solid var(--border);
+  text-align:center;
+  border-radius:2px;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.03);
+}
+
+.login-card{
+  width:var(--card-w);
+  padding:32px 40px 20px 40px;
+}
+
+.register-card{
+  width:var(--card-w);
+  padding:16px 20px;
+  font-size:14px;
+}
+
+/* логотип сверху — использован предоставленный файл */
+.logo{
+  width:190px;
+  margin: 0 auto 18px auto;
+  display:block;
+  object-fit:contain;
+}
+
+/* форма */
+.form{display:flex;flex-direction:column;gap:10px}
+.field{
+  width:100%;
+  padding:10px 12px;
+  border:1px solid var(--border);
+  border-radius:4px;
+  background:#fff;
+  font-size:14px;
+  outline:none;
+  transition:box-shadow .12s, border-color .12s;
+}
+.field:focus{box-shadow:0 0 0 2px rgba(99,132,255,0.08); border-color:#a9b6ff}
+
+/* кнопки */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding:10px 12px;
+  border-radius:6px;
+  border:none;
+  cursor:pointer;
+  font-weight:600;
+  font-size:14px;
+}
+
+.btn.primary{
+  background:var(--primary);
+  color:#fff;
+  box-shadow: none;
+}
+
+.btn.fb{
+  background:transparent;
+  color:var(--fb);
+  font-weight:700;
+  display:inline-flex;
+  gap:8px;
+  align-items:center;
+  justify-content:center;
+  border:none;
+  padding:8px 0;
+}
+.btn.fb svg{height:16px;width:16px;opacity:0.95}
+
+/* разделитель "ИЛИ" */
+.or-row{display:flex;align-items:center;gap:12px;margin:12px 0}
+.line{flex:1;height:1px;background:var(--border)}
+.or{font-size:12px;color:var(--muted)}
+
+/* вспомогательные ссылки */
+.forgot{display:block;margin-top:8px;font-size:13px;color:#00376b;text-decoration:none}
+
+/* футер */
+.site-footer{
+  margin-top:28px;
+  text-align:center;
+  color:var(--muted);
+  font-size:13px;
+  width:100%;
+  padding:18px 10px 60px;
+}
+.footer-links{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-bottom:10px}
+.footer-links a{color:var(--muted);text-decoration:none;font-size:13px}
+
+/* отзывчивость */
+@media (max-width:420px){
+  .login-card, .register-card { width:92%; padding-left:18px; padding-right:18px; }
+  .logo{width:150px}
+}
